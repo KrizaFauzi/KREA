@@ -1,0 +1,16 @@
+# Keep the backend image small — only requirements.txt + backend/ are needed.
+frontend/
+docs/
+venv/
+.venv/
+env/
+node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+.git/
+.github/
+.claude/
+.superpowers/
+.env
+*.db

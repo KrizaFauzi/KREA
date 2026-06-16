@@ -1,3 +1,16 @@
+---
+title: KREA
+emoji: 🎬
+colorFrom: pink
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
+<!-- The YAML block above is metadata for Hugging Face Spaces (Docker SDK), which
+     hosts the backend. GitHub renders it as a small table; it's harmless there. -->
+
 # KREA 🎬
 
 > **Riset produk TikTok → prompt video, KREA yang urus.**
@@ -272,6 +285,28 @@ generate a video — just prompt text. Triggers the card on the frontend.
 | `done` | `session_id` | End-of-turn marker; store `session_id` for the next message. |
 
 ---
+
+## Deployment (free)
+
+KREA deploys as two free services: **frontend on Netlify**, **backend on Hugging
+Face Spaces** (Docker). The browser talks to the backend directly via
+`VITE_API_BASE`, so streaming is not proxied (and not buffered/timed out).
+
+### Backend → Hugging Face Spaces
+1. Create a new **Space** → SDK **Docker** (free CPU tier, no credit card).
+2. Push this repo to the Space (the root `Dockerfile` + README frontmatter make it
+   build automatically; it listens on port `7860`).
+3. In **Settings → Variables and secrets**, add:
+   - `GOOGLE_API_KEY` (secret, required)
+   - `RAPIDAPI_KEY` (secret, optional — for live TikTok research)
+   - `CORS_ORIGINS` = your Netlify URL, e.g. `https://your-site.netlify.app`
+4. Note the Space URL: `https://<user>-<space>.hf.space`.
+
+### Frontend → Netlify
+1. New site **from Git** → pick this GitHub repo (`netlify.toml` configures the build).
+2. Set **Environment variable** `VITE_API_BASE` to your HF Space URL (or edit it in
+   `netlify.toml`). No trailing slash, no `/api`.
+3. Deploy. Then set the backend's `CORS_ORIGINS` to the resulting Netlify URL.
 
 ## Notes & limitations
 

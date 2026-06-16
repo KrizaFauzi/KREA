@@ -1,6 +1,7 @@
-// API helpers for KREA. In dev, /api is proxied to the FastAPI backend.
-
-const BASE = "/api";
+// API helpers for KREA.
+// In dev, BASE is "/api" (Vite proxies it to the FastAPI backend on :8000).
+// In production, set VITE_API_BASE to the backend URL (e.g. the HF Space URL).
+const BASE = import.meta.env.VITE_API_BASE ?? "/api";
 
 /**
  * Stream a chat turn. Calls onEvent for each NDJSON event the backend emits:
