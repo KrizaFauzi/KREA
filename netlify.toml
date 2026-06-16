@@ -12,7 +12,7 @@
   NODE_VERSION = "20"
   # URL of the HF Space backend (no trailing slash, no /api).
   # Replace if your Space URL differs (format: https://<user>-<space>.hf.space).
-  VITE_API_BASE = "https://krizafauzi-krea.hf.space"
+  VITE_API_BASE = "https://amadeoja-krea.hf.space"
 
 # SPA fallback so client-side routes resolve to index.html.
 [[redirects]]
