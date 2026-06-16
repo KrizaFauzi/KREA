@@ -134,6 +134,8 @@ body::before {
   flex-direction: column;
   gap: 6px;
   max-width: 100%;
+  /* Don't let the scroll container squish items — keeps content from being clipped. */
+  flex-shrink: 0;
   animation: rise 0.28s ease both;
 }
 @keyframes rise {
@@ -249,6 +251,9 @@ body::before {
   gap: 14px;
   width: 100%;
   overflow: hidden;
+  /* Prevent the flex scroll container from shrinking the card (which, with
+     overflow:hidden, would clip the prompt and hide the Copy button). */
+  flex-shrink: 0;
   animation: rise 0.28s ease both;
 }
 /* Gradient accent rail down the left edge */
