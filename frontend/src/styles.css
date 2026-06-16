@@ -60,6 +60,16 @@ body::before {
   padding: 20px 4px 14px;
   border-bottom: 1px solid var(--border-soft);
 }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  height: 46px;
+  width: auto;
+  flex-shrink: 0;
+}
 .header h1 {
   margin: 0;
   font-size: 28px;

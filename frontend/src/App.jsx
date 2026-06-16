@@ -70,9 +70,12 @@ export default function App() {
   return (
     <div className="app">
       <header className="header">
-        <div>
-          <h1>KREA</h1>
-          <p className="tagline">Riset produk TikTok → prompt video, KREA yang urus.</p>
+        <div className="brand">
+          <img src="/logo.png" alt="KREA" className="logo" />
+          <div>
+            <h1>KREA</h1>
+            <p className="tagline">Riset produk TikTok → prompt video, KREA yang urus.</p>
+          </div>
         </div>
         <div className="steps">
           <span>1· Riset produk</span>

@@ -11,6 +11,10 @@ pinned: false
 <!-- The YAML block above is metadata for Hugging Face Spaces (Docker SDK), which
      hosts the backend. GitHub renders it as a small table; it's harmless there. -->
 
+<p align="center">
+  <img src="frontend/public/logo.png" alt="KREA logo" width="140" />
+</p>
+
 # KREA 🎬
 
 > **Riset produk TikTok → prompt video, KREA yang urus.**
